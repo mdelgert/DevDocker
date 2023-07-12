@@ -8,7 +8,7 @@ services:
     container_name: ubuntu
     image: mdelgert/ssh_ubuntu1:latest
     ports:
-      - '2020:22'
+      - '2021:22'
     environment:
       ROOT_PASSWORD: 'password'
     restart: unless-stopped

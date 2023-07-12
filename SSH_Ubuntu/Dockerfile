@@ -11,7 +11,7 @@ COPY entrypoint.sh /
 RUN chmod +x /entrypoint.sh
 
 # Set environment variable for root password
-ENV ROOT_PASSWORD=password_placeholder
+ENV ROOT_PASSWORD=password
 
 # Create privilege separation directory
 RUN mkdir /run/sshd
@@ -20,7 +20,7 @@ RUN mkdir /run/sshd
 CMD ["/entrypoint.sh"]
 
 # docker build -t ubuntu-ssh .
-# docker run -d -p 2222:22 --name ubuntu-ssh-container -e ROOT_PASSWORD=password1 ubuntu-ssh
+# docker run -d -p 2222:22 --name ubuntu-ssh-container -e ROOT_PASSWORD=password ubuntu-ssh
 
 # Using compose
 # docker-compose up -d

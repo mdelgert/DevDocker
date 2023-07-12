@@ -1,0 +1,13 @@
+# Icon : https://www.gravatar.com/avatar/f6ebd1a2056ef8d3fdd354e7c74e52fe?s=120&r=g&d=404
+
+version: '3'
+services:
+  alpine:
+    container_name: alpine
+    image: mdelgert/alpine-sshd:latest
+    ports:
+      - '2022:22'
+    environment:
+      USERNAME: 'username'
+      PASSWORD: 'password'
+    restart: unless-stopped

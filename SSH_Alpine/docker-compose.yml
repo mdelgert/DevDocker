@@ -1,0 +1,13 @@
+version: '3'
+services:
+  ssh-server:
+    build:
+      context: .
+      #args:
+      #  - ROOT_PASSWORD=<your_password>
+    ports:
+      - 2222:22
+    environment:
+      USERNAME: 'username'
+      PASSWORD: 'password'  
+    restart: unless-stopped
