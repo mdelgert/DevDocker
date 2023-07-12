@@ -4,11 +4,11 @@
 
 version: '3'
 services:
-  ubuntu1:
-    container_name: ubuntu1
+  ubuntu:
+    container_name: ubuntu
     image: mdelgert/ssh_ubuntu1:latest
     ports:
-      - '2022:22'
+      - '2020:22'
     environment:
-      - ROOT_PASSWORD=password
-    restart: unless-stopped  
+      ROOT_PASSWORD: 'password'
+    restart: unless-stopped
