@@ -23,5 +23,3 @@ ENTRYPOINT ["/entrypoint.sh"]
 # docker run -d -p 139:139 -p 445:445 -v /home/mdelgert/shared:/shared samba-server username password
 # docker run -d -p 139:139 -p 445:445 -v /home/mdelgert/shared:/shared mdelgert/samba-server username password
 
-# Links
-# https://alpinelinux.org/releases/

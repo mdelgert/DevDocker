@@ -1,7 +1,7 @@
 version: '3'
 
 services:
-  samba:
+  server:
     build:
       context: .
       dockerfile: Dockerfile
@@ -9,7 +9,10 @@ services:
       - '139:139'
       - '445:445'
     volumes:
-      - /path/to/shared/folder:/shared
+      - '/home/mdelgert/shared:/shared'
     environment:
-      - USERNAME=sambauser
-      - PASSWORD=sambapass
+      USERNAME: 'username'
+      PASSWORD: 'password'
+
+# docker-compose up --build -d
+# docker-compose down

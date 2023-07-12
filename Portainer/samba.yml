@@ -1,4 +1,5 @@
 # Icon - https://cdn2.iconfinder.com/data/icons/kids/128x128/apps/samba.png
+# https://hub.docker.com/repository/docker/mdelgert/samba-server/general
 
 version: '3'
 
@@ -10,8 +11,8 @@ services:
       - '139:139'
       - '445:445'
     volumes:
-      - /path/to/shared/folder:/shared
+      - '/home/mdelgert/shared:/shared'
     environment:
-      - USERNAME=sambauser
-      - PASSWORD=sambapass
+      USERNAME: 'username'
+      PASSWORD: 'password'
     restart: unless-stopped  
