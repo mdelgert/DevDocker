@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  samba:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - '139:139'
+      - '445:445'
+    volumes:
+      - /path/to/shared/folder:/shared
+    environment:
+      - USERNAME=sambauser
+      - PASSWORD=sambapass

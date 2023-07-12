@@ -4,18 +4,24 @@ FROM ubuntu:22.04
 # Install SSH server
 RUN apt-get update && apt-get install -y openssh-server
 
-# Configure SSH server
-RUN mkdir /var/run/sshd
-RUN echo 'root:password' | chpasswd
-RUN sed -i 's/#PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh/sshd_config
-RUN echo 'PermitUserEnvironment yes' >> /etc/ssh/sshd_config
+# Copy entrypoint script
+COPY entrypoint.sh /
 
-# Expose SSH port
-EXPOSE 22
+# Allow execution of entrypoint script
+RUN chmod +x /entrypoint.sh
+
+# Set environment variable for root password
+ENV ROOT_PASSWORD=password_placeholder
+
+# Create privilege separation directory
+RUN mkdir /run/sshd
 
 # Start SSH server
-CMD ["/usr/sbin/sshd", "-D"]
+CMD ["/entrypoint.sh"]
 
-#docker build -t ubuntu1 .
-#docker run -d --restart=unless-stopped -p 2022:22 --name dev1 ubuntu1
-#ssh root@localhost -p 2022
+# docker build -t ubuntu-ssh .
+# docker run -d -p 2222:22 --name ubuntu-ssh-container -e ROOT_PASSWORD=password1 ubuntu-ssh
+
+# Using compose
+# docker-compose up -d
+# ssh root@localhost -p 2223

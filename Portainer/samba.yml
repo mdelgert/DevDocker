@@ -1,0 +1,17 @@
+# Icon - https://cdn2.iconfinder.com/data/icons/kids/128x128/apps/samba.png
+
+version: '3'
+
+services:
+  samba:
+    container_name: samba
+    image: mdelgert/samba-server:latest
+    ports:
+      - '139:139'
+      - '445:445'
+    volumes:
+      - /path/to/shared/folder:/shared
+    environment:
+      - USERNAME=sambauser
+      - PASSWORD=sambapass
+    restart: unless-stopped  

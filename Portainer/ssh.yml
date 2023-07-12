@@ -1,0 +1,14 @@
+# Icon - data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADgAAAA4CAMAAACfWMssAAAAZlBMVEX////0dCHzaQD0bAD0chvzZgD0cBX+8Ov97ebzYwD0bg33m2/++fb0bQb718j85Nr2j1r0eS74s5P6zbn4r472mGn5v6X1hUf1gkH1iU76xa71fzr5u6D96eD3oHfzXQD3pn/4qocUr2luAAACKklEQVRIic2WabOrIAyGlU1FsWhd6nJ72v//J48QBddWmTkzN186I32SlyRAPO8/siAMg6tMmkse0cEiLvP0NBVTxJk/GuOYlmfYe4YMZGCU3b9gtw6RNaaMoO72iSuiXUyjtDjEkhofQNodrpN9LiCbzWnDrPG1R0Z2yxPwfZmoVylDOjLfIROyz7GXXu4FaN6qfax0Ei4wFpwgyGaAwM1jk89FXghGTdHe723R0H8gaFzHq9zeogX3aI0kUemfdHIcLevZzTbIGJd2pY9UyCSb/kC6OQdJA+OP5BnNOqz8ebZvbB2jefdl9ruKliB/7lUSKbndR2aXUhsQ0tbTPKnipomrqXCzpCN7VmL7FUNWOo4EI4QJWgIa2Kyz2IDUci1ImKVqDNBakhql5tuoP7We1P/SVR7wpDU3O4eAAfIXhoJlSJ6PoNRbJIyNOyxX3cdK9TUx7thUZh1QZK8n5woMqL8yqkM2RisfQdVu4q2c1qotKrEGoe0Ks6MIOBWBQNcnP+miOJO2p24E4xAUeOEA8h6c1PlckrUuG8xKDwFEV0EUXpNq6jFKdU7OVI73U1wsh3MDOLecc5PvHCtbkU/HanGQIdMnD7Lz1fHtsvJls39ZfbkeX9Xh9bi4kMmFC3n9BHSnnwDnR2c4UJtnDg+2eebqNef+sDo/5cfDg2Dy4/DgPq54nwek6HhA8txHMs95CFS2HTvj8yNrLhkMuuzCoDuZy2j9l/YLU4Ui6US5jmcAAAAASUVORK5CYII=
+# https://cdn2.iconfinder.com/data/icons/whcompare-blue-green-web-hosting-1/453/ssh-512.png
+# https://cdn2.iconfinder.com/data/icons/ios-7-style-metro-ui-icons/512/MetroUI_Ubuntu_Alt.png
+
+version: '3'
+services:
+  ubuntu1:
+    container_name: ubuntu1
+    image: mdelgert/ssh_ubuntu1:latest
+    ports:
+      - '2022:22'
+    environment:
+      - ROOT_PASSWORD=password
+    restart: unless-stopped  
