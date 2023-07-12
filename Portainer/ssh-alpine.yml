@@ -6,8 +6,8 @@ services:
     container_name: alpine
     image: mdelgert/alpine-sshd:latest
     ports:
-      - '2022:22'
+      - '2021:22'
     environment:
-      USERNAME: 'username'
+      USERNAME: 'mdelgert'
       PASSWORD: 'password'
     restart: unless-stopped

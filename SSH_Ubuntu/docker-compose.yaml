@@ -5,6 +5,6 @@ services:
       context: .
       dockerfile: Dockerfile
     ports:
-      - '2223:22'
+      - '2022:22'
     environment:
       ROOT_PASSWORD: 'password'

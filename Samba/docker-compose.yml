@@ -1,5 +1,4 @@
 version: '3'
-
 services:
   server:
     build:
@@ -11,8 +10,8 @@ services:
     volumes:
       - '/home/mdelgert/shared:/shared'
     environment:
-      USERNAME: 'username'
+      USERNAME: 'mdelgert'
       PASSWORD: 'password'
 
-# docker-compose up --build -d
-# docker-compose down
+# $ docker-compose up --build -d
+# $ docker-compose down
