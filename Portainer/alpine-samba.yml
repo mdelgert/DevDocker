@@ -2,17 +2,13 @@
 # https://hub.docker.com/repository/docker/mdelgert/samba-server/general
 
 version: '3'
-
 services:
-  samba:
-    container_name: samba
-    image: mdelgert/samba-server:latest
+  alpine:
+    container_name: alpine
+    image: mdelgert/alpine-sshd:latest
     ports:
-      - '139:139'
-      - '445:445'
-    volumes:
-      - '/home/mdelgert/shared:/shared'
+      - '2021:22'
     environment:
-      USERNAME: 'username'
+      USERNAME: 'mdelgert'
       PASSWORD: 'password'
-    restart: unless-stopped  
+    restart: unless-stopped

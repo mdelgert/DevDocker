@@ -19,7 +19,6 @@ RUN chmod +x /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]
 
 # Example deploy
-# docker build -t samba-server .
-# docker run -d -p 139:139 -p 445:445 -v /home/mdelgert/shared:/shared samba-server username password
-# docker run -d -p 139:139 -p 445:445 -v /home/mdelgert/shared:/shared mdelgert/samba-server username password
+# docker build -t alpine-samba .
+# docker run -d -p 139:139 -p 445:445 -v /home/mdelgert/shared:/shared alpine-samba mdelgert password
 
