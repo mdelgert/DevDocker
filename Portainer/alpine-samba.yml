@@ -3,11 +3,14 @@
 
 version: '3'
 services:
-  alpine:
-    container_name: alpine
-    image: mdelgert/alpine-sshd:latest
+  alpine-samba:
+    container_name: alpine-samba
+    image: mdelgert/alpine-samba:latest
     ports:
-      - '2021:22'
+      - '139:139'
+      - '445:445'
+    volumes:
+      - '/home/mdelgert/shared:/shared'
     environment:
       USERNAME: 'mdelgert'
       PASSWORD: 'password'

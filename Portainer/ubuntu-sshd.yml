@@ -4,11 +4,12 @@
 
 version: '3'
 services:
-  ubuntu:
-    container_name: ubuntu
-    image: mdelgert/ssh_ubuntu1:latest
+  ubuntu-sshd:
+    container_name: ubuntu-sshd
+    image: mdelgert/ubuntu-sshd:latest
     ports:
-      - '2021:22'
+      - '2022:22'
     environment:
-      ROOT_PASSWORD: 'password'
-    restart: unless-stopped
+      USERNAME: 'mdelgert'
+      PASSWORD: 'password'
+    restart: unless-stopped   

@@ -2,8 +2,8 @@
 
 version: '3'
 services:
-  alpine:
-    container_name: alpine
+  alpine-sshd:
+    container_name: alpine-sshd
     image: mdelgert/alpine-sshd:latest
     ports:
       - '2021:22'

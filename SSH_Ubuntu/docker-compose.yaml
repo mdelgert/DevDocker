@@ -7,4 +7,9 @@ services:
     ports:
       - '2022:22'
     environment:
-      ROOT_PASSWORD: 'password'
+      USERNAME: 'mdelgert'
+      PASSWORD: 'password'  
+    restart: unless-stopped
+
+# docker-compose up --build -d
+# docker-compose down
