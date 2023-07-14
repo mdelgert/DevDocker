@@ -1,0 +1,31 @@
+#https://medium.com/geekculture/backups-with-docker-duplicati-533da56b7bb9
+#https://hub.docker.com/r/duplicati/duplicati/
+
+version: '3'
+services:
+  duplicati:
+    image: lscr.io/linuxserver/duplicati:latest
+    container_name: duplicati
+    environment:
+    - PUID=1000 #the user
+    - PGID=1000 #the group
+    - TZ=America/New_York
+    #- CLI_ARGS= #optional
+    volumes:
+    - duplicati-data/config:/config
+    - duplicati-data/backups:/backups
+    - duplicati-data/source:/source
+    ports:
+    - 8200:8200
+    restart: unless-stopped
+
+# docker volume create duplicati-data
+# docker-compose up
+# docker-compose up -d
+# docker-compose down
+
+# docker run -d -p 8200:8200 -v duplicati-data:/data duplicati/duplicati
+
+# docker run -d --name duplicati -p 8200:8200 -v duplicati-data:/data duplicati/duplicati
+
+# https://github.com/duplicati/duplicati/issues/3484
