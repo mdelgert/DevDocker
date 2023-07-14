@@ -1,5 +1,13 @@
 #!/bin/bash
 
+# Add if statement to support docker and compsoe file.
+if [ $# -eq 2 ]; then
+  USERNAME=$1
+  PASSWORD=$2
+else
+  echo "No arguments."
+fi
+
 # Check if script is being run as root
 if [[ $EUID -ne 0 ]]; then
    echo "This script must be run as root" 
