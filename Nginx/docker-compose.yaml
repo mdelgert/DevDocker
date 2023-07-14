@@ -1,0 +1,23 @@
+# https://notthebe.ee/blog/easy-ssl-in-homelab-dns01/
+# https://www.duckdns.org/domains
+# https://dash.cloudflare.com/
+# https://nginxproxymanager.com/
+# https://stackoverflow.com/questions/37705017/create-named-docker-volume-with-docker-compose
+
+version: '3.8'
+services:
+  nginxproxymanager:
+    image: 'jc21/nginx-proxy-manager:latest'
+    restart: unless-stopped
+    ports:
+      - '80:80'
+      - '81:81'
+      - '443:443'
+    volumes:
+      - data:/data
+      - data:/etc/letsencrypt
+volumes:
+  data:
+
+# docker-compose up -d
+# docker-compose down
