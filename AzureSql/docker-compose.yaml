@@ -1,4 +1,5 @@
 # https://stackoverflow.com/questions/71658362/azure-sql-edge-does-not-persist-data-to-docker-volumes
+# https://stackoverflow.com/questions/71658362/azure-sql-edge-does-not-persist-data-to-docker-volumes
 
 version: '3'
 services:
@@ -7,16 +8,20 @@ services:
     hostname: "azure-sql"
     environment:
       ACCEPT_EULA: 1
-      MSSQL_SA_PASSWORD: ":8jNZdK7cK"
+      MSSQL_SA_PASSWORD: "password"
       MSSQL_USER: "SA"
       MSSQL_PID: "Developer"
     volumes:
-      - azure-sql-storage:/var/opt/mssql-extensibility/data
-      - azure-sql-storage:/var/opt/mssql-extensibility/log
-      - azure-sql-storage:/var/opt/mssql-extensibility
+      - azuresql-edge-data:/var/opt/mssql
     ports:
       - "1433:1433"
 
-volumes:
-  azure-sql-storage:
-    external: true
+# docker run --cap-add SYS_PTRACE -e 'ACCEPT_EULA=1' -e 'MSSQL_SA_PASSWORD=password' -p 1433:1433 --name azuresqledge -d mcr.microsoft.com/azure-sql-edge
+# docker run --cap-add SYS_PTRACE -e 'ACCEPT_EULA=1' -e 'MSSQL_SA_PASSWORD=password' -e 'MSSQL_PID=Premium' -p 1433:1433 --name azuresqledge -d mcr.microsoft.com/azure-sql-edge
+
+# docker volume create mssql-data
+# docker run -e 'ACCEPT_EULA=Y' -e 'SA_PASSWORD=password' -v mssql-data:/var/opt/mssql -p 1433:1433 --name sql_edge_container mcr.microsoft.com/azure-sql-edge
+
+# docker-compose up
+# docker-compose up -d
+# docker-compose down

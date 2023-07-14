@@ -18,9 +18,9 @@ services:
       - TITLE=Webtop #optional
     volumes:
       - /home/mdelgert/webtop:/config
-      - /var/run/docker.sock:/var/run/docker.sock #optional
+      #- /var/run/docker.sock:/var/run/docker.sock #optional
     ports:
-      - 80:3000
+      - 8083:3000
       - 3001:3001
     devices:
       - /dev/dri:/dev/dri #optional
