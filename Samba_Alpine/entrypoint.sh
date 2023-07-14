@@ -1,8 +1,12 @@
 #!/bin/sh
 
-# Set default values if parameters are not provided
-#USERNAME=${1:-"default_user"}
-#PASSWORD=${2:-"default_password"}
+# Add if statement to support docker and compsoe file.
+if [ $# -eq 2 ]; then
+  USERNAME=$1
+  PASSWORD=$2
+else
+  echo "No arguments."
+fi
 
 # Add the user and set the password
 adduser -D -H -s /sbin/nologin $USERNAME
