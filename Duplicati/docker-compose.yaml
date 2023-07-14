@@ -26,6 +26,6 @@ services:
 
 # docker run -d -p 8200:8200 -v duplicati-data:/data duplicati/duplicati
 
-# docker run -d --name duplicati -p 8200:8200 -v duplicati-data:/data duplicati/duplicati
+# docker run -d --name duplicati -p 8200:8200 -v duplicati-data:/data -v /home/mdelgert/shared:/shared duplicati/duplicati
 
 # https://github.com/duplicati/duplicati/issues/3484
