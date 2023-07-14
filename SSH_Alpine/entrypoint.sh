@@ -1,6 +1,14 @@
 #!/bin/sh
 ssh-keygen -A
 
+# Add if statement to support docker and compsoe file.
+if [ $# -eq 2 ]; then
+  USERNAME=$1
+  PASSWORD=$2
+else
+  echo "No arguments."
+fi
+
 adduser --disabled-password --gecos '' -h /home/$USERNAME -s /bin/sh -D $USERNAME && \
     echo 'user ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
 
