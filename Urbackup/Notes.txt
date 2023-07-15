@@ -1,0 +1,12 @@
+https://blog.urbackup.org/331/raspberry-pi-4-backup-appliance
+https://blog.urbackup.org/87/backup-server-for-the-raspberry-pi
+https://www.raspberry-pi-geek.com/Archive/2016/19/Using-the-Raspberry-Pi-as-a-backup-server/(offset)/2
+
+# Install client on Debian or Ubuntu from sources
+https://forums.urbackup.org/t/client-for-raspberry-pi/1167
+
+TF=$(mktemp) && wget "https://hndl.urbackup.org/Client/2.5.24/UrBackup%20Client%20Linux%202.5.24.sh" -O $TF && sudo sh $TF; rm -f $TF
+
+sudo urbackupclientbackend -v info
+
+sudo nano /usr/local/var/urbackup/server_idents.txt
