@@ -1,0 +1,11 @@
+# How to Set Up Tailscale on Docker
+https://www.wundertech.net/how-to-set-up-tailscale-on-docker/
+https://tailscale.com/kb/1184/docker-desktop/
+https://tailscale.com/learn/ssh-into-docker-container/
+https://hub.docker.com/r/tailscale/tailscale
+
+# 4.1. If you only want to access the device you’re installing Tailscale on, run the command below.
+docker run -d --name=tailscaled -v /var/lib:/var/lib -v /dev/net/tun:/dev/net/tun --network=host --cap-add=NET_ADMIN --restart unless-stopped --cap-add=NET_RAW --env TS_AUTHKEY=[AUTH KEY]  tailscale/tailscale
+
+# 4.2. If you want to access all devices on your local subnet, run the command below substituting the Auth Key and the Subnet. In my case, the subnet is 10.2.0.0/24, though your subnet is most likely different.
+docker run -d --name=tailscaled -v /var/lib:/var/lib -v /dev/net/tun:/dev/net/tun --network=host --cap-add=NET_ADMIN --restart unless-stopped --cap-add=NET_RAW --env TS_AUTHKEY=[AUTH KEY] --env TS_EXTRA_ARGS=--advertise-exit-node --env TS_ROUTES=[SUBNET] tailscale/tailscale
