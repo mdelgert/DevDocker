@@ -2,6 +2,7 @@
 # https://medium.com/swlh/set-up-your-own-personal-password-vault-313d76374046
 # https://hub.docker.com/r/vaultwarden/server
 # https://www.howtoforge.com/how-to-install-vaultwarden-on-ubuntu-22-04/
+# https://docs.cloud68.co/books/instances-faqs/page/vaultwarden
 
 version: '3'
 
