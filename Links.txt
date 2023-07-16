@@ -1,13 +1,24 @@
+# Review later
 https://github.com/oijkn/Docker-Raspberry-PI-Monitoring
 https://hub.docker.com/r/ddosify/ddosify
 https://github.com/pozgo/docker-stress
 https://github.com/novaspirit/pi-hosted.git
+https://podman.io/
+https://dashy.to/
+https://demo.dashy.to/
+https://medium.com/karlmax-berlin/how-to-install-kubernetes-on-raspberry-pi-53b4ce300b58
+
+# Monitoring
+https://www.netdata.cloud/
+https://oss.oetiker.ch/smokeping/
+https://github.com/librespeed/speedtest
 
 Old portainer
 https://raw.githubusercontent.com/portainer/templates/master/templates-2.0.json
 
 Updated portainer
 https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/template/portainer-v2-arm64.json
+https://github.com/dazeb/Raspberry-Pi-4-Portainer-2.0-Templates/blob/main/templates-upgraded-rpi2.json
 
 Portainer templates
 https://github.com/pi-hosted/pi-hosted
@@ -15,3 +26,4 @@ https://github.com/Lissy93/portainer-templates
 https://github.com/TheLustriVA/portainer-templates-Nov-2022-collection
 https://github.com/SelfhostedPro/selfhosted_templates
 https://github.com/oijkn/Docker-Raspberry-PI-Monitoring.git
+
