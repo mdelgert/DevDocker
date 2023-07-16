@@ -8,3 +8,9 @@ https://raw.githubusercontent.com/portainer/templates/master/templates-2.0.json
 
 Updated portainer
 https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/template/portainer-v2-arm64.json
+
+Portainer templates
+https://github.com/pi-hosted/pi-hosted
+https://github.com/Lissy93/portainer-templates
+https://github.com/TheLustriVA/portainer-templates-Nov-2022-collection
+https://github.com/SelfhostedPro/selfhosted_templates
