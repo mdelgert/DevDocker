@@ -2,3 +2,9 @@ https://github.com/oijkn/Docker-Raspberry-PI-Monitoring
 https://hub.docker.com/r/ddosify/ddosify
 https://github.com/pozgo/docker-stress
 https://github.com/novaspirit/pi-hosted.git
+
+Old portainer
+https://raw.githubusercontent.com/portainer/templates/master/templates-2.0.json
+
+Updated portainer
+https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/template/portainer-v2-arm64.json
