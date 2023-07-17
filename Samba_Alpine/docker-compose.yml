@@ -1,9 +1,13 @@
 version: '3'
 services:
-  server:
-    build:
-      context: .
-      dockerfile: Dockerfile
+  samba:
+    # build:
+    #   context: .
+    #   dockerfile: Dockerfile
+    container_name: samba
+    hostname: samba
+    network_mode: bridge
+    restart: unless-stopped
     ports:
       - '139:139'
       - '445:445'
@@ -13,5 +17,5 @@ services:
       USERNAME: 'mdelgert'
       PASSWORD: 'password'
 
-# $ docker-compose up --build -d
-# $ docker-compose down
+# $ docker compose up --build -d
+# $ docker compose down

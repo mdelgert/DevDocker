@@ -40,6 +40,6 @@ services:
       # - SMTP_PASSWORD=YourReallyStrongPasswordHere
       # - SMTP_AUTH_MECHANISM="Mechanism"
 
-# docker-compose up
-# docker-compose up -d
-# docker-compose down      
+# docker compose up
+# docker compose up -d
+# docker compose down      

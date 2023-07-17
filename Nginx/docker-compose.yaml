@@ -3,11 +3,15 @@
 # https://dash.cloudflare.com/
 # https://nginxproxymanager.com/
 # https://stackoverflow.com/questions/37705017/create-named-docker-volume-with-docker-compose
+#https://nginxproxymanager.com/logo.png
 
-version: '3.8'
+version: '3'
 services:
-  nginxproxymanager:
+  nginx:
     image: 'jc21/nginx-proxy-manager:latest'
+    container_name: nginx
+    hostname: nginx
+    network_mode: bridge
     restart: unless-stopped
     ports:
       - '80:80'
@@ -19,5 +23,5 @@ services:
 volumes:
   data:
 
-# docker-compose up -d
-# docker-compose down
+# docker compose up -d
+# docker compose down
