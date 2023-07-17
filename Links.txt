@@ -7,6 +7,8 @@ https://podman.io/
 https://dashy.to/
 https://demo.dashy.to/
 https://rm3l.org/leveraging-kubernetes-cronjobs-for-automated-backups-of-a-headless-ghost-blog-to-aws-s3/
+https://collabnix.com/getting-started-with-docker-and-kubernetes-on-raspberry-pi/
+https://kubernetes.io/docs/tutorials/stateful-application/mysql-wordpress-persistent-volume/
 
 # Monitoring
 https://www.netdata.cloud/
@@ -32,3 +34,6 @@ https://kubernetes.io/docs/tasks/access-application-cluster/web-ui-dashboard/
 https://medium.com/karlmax-berlin/how-to-install-kubernetes-on-raspberry-pi-53b4ce300b58
 https://anthonynsimon.com/blog/kubernetes-cluster-raspberry-pi/
 https://k3s.io/
+
+# Dynamic DNS
+https://github.com/favonia/cloudflare-ddns/

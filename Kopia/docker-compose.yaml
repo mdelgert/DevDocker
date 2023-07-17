@@ -1,0 +1,45 @@
+# https://kopia.io/docs/installation/#docker-images
+# https://github.com/kopia/kopia
+# https://kopia.discourse.group/t/containerized-kopia-server-setup/510
+
+version: '3.7'
+services:
+    kopia:
+        image: kopia/kopia:latest
+        hostname: p2
+        container_name: Kopia
+        restart: unless-stopped
+        ports:
+            - 51515:51515
+        # Setup the server that provides the web gui
+        command:
+            - server
+            - start
+            - --disable-csrf-token-checks
+            - --insecure
+            - --address=0.0.0.0:51515
+            # - --server-username=USERNAME
+            # - --server-password=SECRET_PASSWORD
+            - --server-username=admin
+            - --server-password=admin
+        environment:
+            # Set repository password
+            # KOPIA_PASSWORD: "SECRET"
+            # USER: "User"
+            KOPIA_PASSWORD: "admin"
+            USER: "admin"
+        volumes:
+            # Mount local folders needed by kopia
+            - /home/mdelgert/kopia/config:/app/config
+            - /home/mdelgert/kopia/cache:/app/cache
+            - /home/mdelgert/kopia/logs:/app/logs
+            # Mount local folders to snapshot
+            - /home/mdelgert/source:/data:ro
+            # Mount repository location
+            - /home/mdelgert/kopia/repository:/repository
+            # Mount path for browsing mounted snaphots
+            - /home/mdelgert/kopia/tmp:/tmp:shared
+        
+# docker-compose up
+# docker-compose up -d
+# docker-compose down

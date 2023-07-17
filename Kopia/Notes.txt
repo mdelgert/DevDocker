@@ -1,0 +1,8 @@
+docker volume create kopa-data
+
+docker run -e KOPIA_PASSWORD \
+    -v kopa-data:/app/config \
+    -v kopa-data:/app/cache \
+    -v kopa-data:/app/logs \
+    -v kopa-data:/repository \
+    -v kopa-data:/tmp:shared
