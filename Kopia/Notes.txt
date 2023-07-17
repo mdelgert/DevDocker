@@ -1,8 +1,22 @@
-docker volume create kopa-data
+Test
 
-docker run -e KOPIA_PASSWORD \
-    -v kopa-data:/app/config \
-    -v kopa-data:/app/cache \
-    -v kopa-data:/app/logs \
-    -v kopa-data:/repository \
-    -v kopa-data:/tmp:shared
+https://kopia.io/docs/installation/#docker-images
+https://github.com/kopia/kopia
+https://kopia.discourse.group/t/containerized-kopia-server-setup/510
+https://www.reddit.com/r/selfhosted/comments/vc4j7l/hosting_kopia_with_docker_compose/
+https://kopia.discourse.group/t/containerized-kopia-server-setup/510
+https://github.com/kopia/kopia/issues/2551
+https://kopia.discourse.group/t/repository-server-via-docker/400/3
+
+docker run --name kopia -e KOPIA_PASSWORD="admin" \
+           -v /home/mdelgert/kopia/data:/app/data \				# You only have to mount this if you create a local filesystem for storing the data
+           -v /home/mdelgert/kopia/config:/app/config \
+           -v /home/mdelgert/kopia/cache:/app/cache \
+           -v /home/mdelgert/kopia/logs:/app/logs \
+           -v /etc/ssl/certs/yourcert_fullchain.pem:/app/backup.fullchain.pem \  # you can use --insecure for testing or create a self signed cert.
+           -v /etc/ssl/private/yourcert_privkey.pem:/app/backup.privkey.pem \
+           -p 51515:51515 \
+           kopia/kopia:latest server \
+           --address 0.0.0.0:51515 
+           --tls-cert-file /app/backup.fullchain.pem \
+           --tls-key-file /app/backup.privkey.pem

@@ -10,6 +10,9 @@ https://rm3l.org/leveraging-kubernetes-cronjobs-for-automated-backups-of-a-headl
 https://collabnix.com/getting-started-with-docker-and-kubernetes-on-raspberry-pi/
 https://kubernetes.io/docs/tutorials/stateful-application/mysql-wordpress-persistent-volume/
 
+# Backup compare
+https://github.com/deajan/backup-bench
+
 # Monitoring
 https://www.netdata.cloud/
 https://oss.oetiker.ch/smokeping/
