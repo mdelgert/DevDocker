@@ -12,6 +12,7 @@ https://kubernetes.io/docs/tutorials/stateful-application/mysql-wordpress-persis
 
 # Backup compare
 https://github.com/deajan/backup-bench
+https://github.com/rubiojr/awesome-restic
 
 # Monitoring
 https://www.netdata.cloud/
