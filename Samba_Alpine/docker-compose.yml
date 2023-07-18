@@ -4,6 +4,7 @@ services:
     # build:
     #   context: .
     #   dockerfile: Dockerfile
+    image: mdelgert/alpine-samba:latest
     container_name: samba
     hostname: samba
     network_mode: bridge
@@ -18,4 +19,7 @@ services:
       PASSWORD: 'password'
 
 # $ docker compose up --build -d
+# $ docker compose up -d
 # $ docker compose down
+
+# Icon - https://cdn2.iconfinder.com/data/icons/kids/128x128/apps/samba.png
