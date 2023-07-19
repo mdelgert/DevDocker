@@ -1,0 +1,10 @@
+https://github.com/offen/docker-volume-backup
+https://dev.to/hendr_ik/automate-backing-up-your-docker-volumes-3gdk
+https://www.youtube.com/watch?v=wUXSLmGAtgQ
+https://wiki.opensourceisawesome.com/books/backing-up-docker/page/backup-docker-data-and-configs
+
+docker run --rm \
+  -v data:/backup/data \
+  --env-file backup.env
+  --entrypoint backup \
+  offen/docker-volume-backup:v2

@@ -1,0 +1,49 @@
+version: '3'
+
+services:
+  volume-consumer:
+    build:
+      context: .
+    ports:
+      - '2021:22'
+    environment:
+      USERNAME: 'admin'
+      PASSWORD: 'admin'  
+    restart: unless-stopped
+    volumes:
+      - data:/test
+
+    labels:
+      # This means the container will be stopped during backup to ensure
+      # backup integrity. You can omit this label if stopping during backup
+      # not required.
+      - docker-volume-backup.stop-during-backup=true
+
+  backup:
+    # In production, it is advised to lock your image tag to a proper
+    # release version instead of using `latest`.
+    # Check https://github.com/offen/docker-volume-backup/releases
+    # for a list of available releases.
+    image: offen/docker-volume-backup:latest
+    restart: always
+    env_file: ./backup.env # see below for configuration reference
+    volumes:
+      - data:/backup:ro
+      # Mounting the Docker socket allows the script to stop and restart
+      # the container during backup. You can omit this if you don't want
+      # to stop the container. In case you need to proxy the socket, you can
+      # also provide a location by setting `DOCKER_HOST` in the container
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      # If you mount a local directory or volume to `/archive` a local
+      # copy of the backup will be stored there. You can override the
+      # location inside of the container by setting `BACKUP_ARCHIVE`.
+      # You can omit this if you do not want to keep local backups.
+      - /home/mdelgert/backups:/archive
+      # Add ssh keys mount point.
+      - /home/mdelgert/.ssh:/root/.ssh:ro
+
+volumes:
+  data:
+
+# docker compose up -d
+# docker compose down
