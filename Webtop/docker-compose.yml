@@ -27,4 +27,4 @@ services:
     shm_size: "1gb" #optional
     restart: unless-stopped
     
-# docker-compose up -d
+# docker compose up -d

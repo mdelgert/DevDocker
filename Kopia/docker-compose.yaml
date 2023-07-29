@@ -41,6 +41,6 @@ services:
             # Mount restore path
             - /home/mdelgert/shared/kopia/restore:/restore
 
-# docker-compose up
-# docker-compose up -d
-# docker-compose down
+# docker compose up
+# docker compose up -d
+# docker compose down

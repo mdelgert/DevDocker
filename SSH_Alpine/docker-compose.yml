@@ -11,5 +11,5 @@ services:
       PASSWORD: 'password'  
     restart: unless-stopped
 
-# docker-compose up --build -d
-# docker-compose down
+# docker compose up --build -d
+# docker compose down
