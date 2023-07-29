@@ -8,7 +8,7 @@ RUN chmod +x /entrypoint.sh
 
 ENTRYPOINT ["/entrypoint.sh"]
 
-# docker build -t stress-test .
+# docker build -t stress-test-x86 .
 # docker run --name stress-container stress-test --cpu 2 --io 1 --vm 1 --vm-bytes 128M --timeout 300s --metrics-brief
 
 # Run for an hour
