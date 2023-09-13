@@ -1,8 +1,18 @@
 # https://github.com/rmountjoy92/DashMachine
 
-docker create \
-  --name=dashmachine \
-  -p 5000:5000 \
-  -v path/to/data:/dashmachine/dashmachine/user_data \
-  --restart unless-stopped \
-  rmountjoy/dashmachine:latest
+version: '3'
+services:
+  dashmachine:
+    image: 'failed2run/dashmachine:latest'
+    container_name: dashmachine
+    network_mode: bridge
+    restart: unless-stopped
+    ports:
+      - '82:5000'
+    volumes:
+      - data:/dashmachine/dashmachine/user_data
+volumes:
+  data:
+
+# docker compose up -d
+# docker compose down
