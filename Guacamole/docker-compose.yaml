@@ -1,0 +1,19 @@
+# https://guacamole.apache.org/doc/gug/guacamole-docker.html
+# default user and pass guacadmin
+
+version: '3'
+services:
+  guacamole:
+    image: 'oznu/guacamole:armhf'
+    container_name: guacamole
+    network_mode: bridge
+    restart: unless-stopped
+    ports:
+      - '83:8080'
+    volumes:
+      - data:/config
+volumes:
+  data:
+
+# docker compose up -d
+# docker compose down
