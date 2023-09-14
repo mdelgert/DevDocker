@@ -1,3 +1,5 @@
+# https://hub.docker.com/repository/docker/mdelgert/alpine-samba/general
+
 FROM alpine:3.18
 
 # Install Samba and other necessary tools
@@ -20,5 +22,6 @@ ENTRYPOINT ["/entrypoint.sh"]
 
 # Example deploy
 # docker build -t alpine-samba .
-# docker run -d -p 139:139 -p 445:445 -v /home/mdelgert/shared:/shared alpine-samba mdelgert password
+# docker run --name samba -d -p 139:139 -p 445:445 -v /mnt/d1:/shared alpine-samba mdelgert password
+# docker run --name samba -d -p 139:139 -p 445:445 -v /mnt/d1:/d1 -v /mnt/d2:/d2 alpine-samba mdelgert password
 
