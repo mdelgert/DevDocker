@@ -1,0 +1,22 @@
+# https://docs.ntfy.sh/install/
+# https://github.com/binwiederhier/ntfy
+
+version: "3"
+services:
+  ntfy:
+    image: binwiederhier/ntfy:latest
+    container_name: ntfy
+    command:
+      - serve
+    environment:
+      - TZ=UTC    # optional: set desired timezone
+    #user: UID:GID # optional: replace with your own user/group or uid/gid
+    volumes:
+      - /mnt/d1/portainer/Files/AppData/Config/ntfy/cache:/var/cache/ntfy
+      - /mnt/d1/portainer/Files/AppData/Config/ntfy/etc:/etc/ntfy
+    ports:
+      - 87:80
+    restart: unless-stopped
+
+# docker compose up -d
+# docker compose down
