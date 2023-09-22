@@ -1,5 +1,5 @@
-base-url: "http://ntfy.example.com"
+base-url: "http://ntfy1.sh"
 cache-file: "/var/cache/ntfy/cache.db"
 attachment-cache-dir: "/var/cache/ntfy/attachments"
-auth-file: "/var/lib/ntfy/user.db"
+auth-file: "/etc/ntfy/user.db"
 auth-default-access: "deny-all"

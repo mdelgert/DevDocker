@@ -1,11 +1,17 @@
-[https://docs.ntfy.sh/config/]()
+https://docs.ntfy.sh/config/
+https://docs.ntfy.sh/config/#access-control
 
 ### Example: Private instance¶
 ```bash
-$ ntfy user add --role=admin phil
-password: mypass
-confirm: mypass
-user phil added with role admin 
+ntfy user add --role=admin test
+password: password
+confirm: password
+```
+
+### Creating an access token
+```bash
+ntfy token add --expires=1d --label="example" test
+ntfy token list
 ```
 
 ### Example deploy

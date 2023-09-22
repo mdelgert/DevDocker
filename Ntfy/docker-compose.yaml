@@ -15,7 +15,7 @@ services:
       - /mnt/d1/portainer/Files/AppData/Config/ntfy/cache:/var/cache/ntfy
       - /mnt/d1/portainer/Files/AppData/Config/ntfy/etc:/etc/ntfy
     ports:
-      - 87:80
+      - 84:80
     restart: unless-stopped
 
 # docker compose up -d
