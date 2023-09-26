@@ -24,4 +24,4 @@ ENTRYPOINT ["/entrypoint.sh"]
 # docker build -t alpine-samba .
 # docker run --name samba -d -p 139:139 -p 445:445 -v /mnt/d1:/shared alpine-samba mdelgert password
 # docker run --name samba -d -p 139:139 -p 445:445 -v /mnt/d1:/d1 -v /mnt/d2:/d2 alpine-samba mdelgert password
-
+# docker run --name samba -d -p 139:139 -p 445:445 -v /mnt/gfs:/gfs alpine-samba mdelgert password
