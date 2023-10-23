@@ -1,0 +1,17 @@
+version: "3"
+services:
+  node-red:
+    image: nodered/node-red:latest
+    container_name: node-red
+    command:
+      - serve
+    environment:
+      - TZ=UTC    # optional: set desired timezone
+    volumes:
+      - /mnt/d1/portainer/Files/AppData/Config/node-red:/data
+    ports:
+      - 85:1880
+    restart: unless-stopped
+
+# docker compose up -d
+# docker compose down
