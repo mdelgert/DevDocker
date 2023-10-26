@@ -1,41 +1,23 @@
-# https://gist.github.com/tkrisztian95/7d5b5d5f1761ea4ba5d9ae64f9b9d95e
-
-version: '2'
+# Use root/example as user/password credentials
+version: '3.1'
 
 services:
-
   mongo:
-    image: mongo:latest
-    hostname: mongodb
+    image: mongo
+    restart: always
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: example
+
+  mongo-express:
+    image: mongo-express
     restart: always
     ports:
-      - 27017:27017
-    volumes:
-      - mongodb:/data/db
+      - 8081:8081
     environment:
-      - MONGO_INITDB_ROOT_USERNAME=root
-      - MONGO_INITDB_ROOT_PASSWORD=yourDifficultPassword
+      ME_CONFIG_MONGODB_ADMINUSERNAME: root
+      ME_CONFIG_MONGODB_ADMINPASSWORD: example
+      ME_CONFIG_MONGODB_URL: mongodb://root:example@mongo:27017/
 
-  mongo-client:
-    image: mongoclient/mongoclient:latest
-    hostname: mongoclient
-    ports:
-      - 8081:3000 #Port 3000 published to 8081 on host machine 
-    volumes:
-      - clientdb:/data/db
-    depends_on:
-      - mongo
-    environment: 
-      - MONGOCLIENT_AUTH=true #When it's 'true' the UI requires basic auth
-      - MONGOCLIENT_USERNAME=admin
-      - MONGOCLIENT_PASSWORD=admin
-      - MONGOCLIENT_DEFAULT_CONNECTION_URL=mongodb://root:yourDifficultPassword@mongo:27017/admin
-      # Uncomment this line below when you use reverse proxy and want to reach the UI on specific path
-      #- ROOT_URL=https://example.com/nosqlclient
-
-
-volumes:
-   mongodb:
-    driver: local
-   clientdb:
-    driver: local
+# docker compose up -d
+# docker compose down
