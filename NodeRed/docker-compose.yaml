@@ -8,7 +8,7 @@ services:
     environment:
       - TZ=UTC    # optional: set desired timezone
     volumes:
-      - /mnt/d1/portainer/Files/AppData/Config/node-red:/data
+      - /portainer/Files/AppData/Config/node-red:/data
     ports:
       - 85:1880
     restart: unless-stopped

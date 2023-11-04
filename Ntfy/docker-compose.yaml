@@ -12,8 +12,8 @@ services:
       - TZ=UTC    # optional: set desired timezone
     #user: UID:GID # optional: replace with your own user/group or uid/gid
     volumes:
-      - /mnt/d1/portainer/Files/AppData/Config/ntfy/cache:/var/cache/ntfy
-      - /mnt/d1/portainer/Files/AppData/Config/ntfy/etc:/etc/ntfy
+      - /portainer/Files/AppData/Config/ntfy/cache:/var/cache/ntfy
+      - /portainer/Files/AppData/Config/ntfy/etc:/etc/ntfy
     ports:
       - 84:80
     restart: unless-stopped

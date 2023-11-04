@@ -18,8 +18,8 @@ ntfy token list
 ```bash
 docker build -t ntfy .
 docker run --name ntfy -d -p 87:80 \
--v /mnt/d1/portainer/Files/AppData/Config/ntfy/cache:/var/cache/ntfy \
--v /mnt/d1/portainer/Files/AppData/Config/ntfy/etc:/etc/ntfy \
+-v /portainer/Files/AppData/Config/ntfy/cache:/var/cache/ntfy \
+-v /portainer/Files/AppData/Config/ntfy/etc:/etc/ntfy \
 ntfy
 ```
 
