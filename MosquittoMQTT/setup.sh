@@ -12,4 +12,4 @@ docker run -it -d --name mqtt -p 1883:1883 \
 -v /portainer/Files/AppData/Config/mqtt:/mosquitto/log \
  eclipse-mosquitto:2
 
- #docker run -it --name mosquitto -p 1883:1883 eclipse-mosquitto 
+ #docker run -it --name mosquitto -p 1883:1883 eclipse-mosquitto
