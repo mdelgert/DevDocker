@@ -1,3 +1,4 @@
+#!/bin/sh
 docker stop sqledge
 docker rm sqledge
 sudo rm -rf /portainer/Files/AppData/Config/sqledge
