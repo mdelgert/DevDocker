@@ -4,6 +4,9 @@
 # https://www.howtoforge.com/how-to-install-vaultwarden-on-ubuntu-22-04/
 # https://docs.cloud68.co/books/instances-faqs/page/vaultwarden
 # https://nachtimwald.com/2023/03/16/vaultwarden-a-self-hosted-password-vault/
+# https://github.com/dani-garcia/vaultwarden/wiki/Configuration-overview
+# https://github.com/dani-garcia/vaultwarden/wiki/SMTP-Configuration
+# https://docs.sendgrid.com/for-developers/sending-email/integrating-with-the-smtp-api
 
 version: '3'
 
