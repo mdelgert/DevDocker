@@ -11,8 +11,8 @@ services:
       - 2000:80
       #- 2001:443
     environment:
-      DOMAIN: "https://vw.vessea.com"
-      # DATABASE_URL: "postgresql://user_name:user_password@db_host:5432/vaultwarden"
+      DOMAIN: "https://yourdomain.com"
+      DATABASE_URL: "postgresql://root:password@b1:5432/vaultwarden"
       # DISABLE_ADMIN_TOKEN: true
       # ADMIN_TOKEN: "Vy2VyYTTsKPv8W5aEOWUbB/Bt3DEKePbHmI4m9VcemUMS2rEviDowNAFqYi1xjmp" #To disable admin page, make sure no ADMIN_TOKEN environment variable is set, and no "admin_token" key exists in config.json
       # SENDS_ALLOWED: true
