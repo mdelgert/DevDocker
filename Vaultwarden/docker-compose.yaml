@@ -3,6 +3,7 @@
 # https://hub.docker.com/r/vaultwarden/server
 # https://www.howtoforge.com/how-to-install-vaultwarden-on-ubuntu-22-04/
 # https://docs.cloud68.co/books/instances-faqs/page/vaultwarden
+# https://nachtimwald.com/2023/03/16/vaultwarden-a-self-hosted-password-vault/
 
 version: '3'
 
@@ -12,12 +13,12 @@ services:
     image: vaultwarden/server:latest
     restart: unless-stopped
     volumes:
-      - /home/mdelgert/data:/data/
+      - /portainer/Files/AppData/Config/vaultwarden:/data/
     ports:
       - 2000:80
       #- 2001:443
     environment:
-      - DOMAIN=https://test1.vessea.com
+      - DOMAIN=https://yourdomain.com
       - LOGIN_RATELIMIT_MAX_BURST=10
       - LOGIN_RATELIMIT_SECONDS=60
       - ADMIN_RATELIMIT_MAX_BURST=10
