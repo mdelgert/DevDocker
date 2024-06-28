@@ -15,3 +15,4 @@ docker run --name couchdb-for-ols -d --restart always \
     -p 5984:5984 couchdb
 
 #https://github.com/vrtmrz/obsidian-livesync/blob/main/docs/setup_own_server.md#a-using-docker-container
+#curl -s https://raw.githubusercontent.com/vrtmrz/obsidian-livesync/main/utils/couchdb/couchdb-init.sh | bash
