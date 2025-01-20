@@ -1,0 +1,23 @@
+services:
+  nginx-proxy-manager:
+    image: jc21/nginx-proxy-manager:latest
+    container_name: nginx-proxy-manager
+    network_mode: host
+    environment:
+      PUID: 0  # Force root privileges
+      PGID: 0  # Force root privileges
+      TZ: America/New_York
+    volumes:
+      - /portainer/Files/AppData/Config/nginx-proxy-manager/data:/data
+      - /portainer/Files/AppData/Config/nginx-proxy-manager/letsencrypt:/etc/letsencrypt
+    restart: unless-stopped
+    cap_add:
+      - NET_BIND_SERVICE
+
+# docker compose up -d
+# docker compose down
+# image - https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/proxy_mgr.png
+# Default Login Credentials
+# Url: http://yourip:81/login
+# Username: admin@example.com
+# Password: changeme
