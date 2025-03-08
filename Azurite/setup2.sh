@@ -6,5 +6,5 @@ docker run \
     -p 10002:10002 \
     --name azureite-emulator \
     --detach \
-    --restart=always \
+    --restart=unless-stopped \
     -v azuritedata:/data mcr.microsoft.com/azure-storage/azurite
