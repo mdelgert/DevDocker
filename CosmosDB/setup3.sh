@@ -5,9 +5,7 @@ docker run \
     --publish 10250-10255:10250-10255 \
     --name cosmos-emulator \
     --interactive \
-    --env AZURE_COSMOS_EMULATOR_ENABLE_DATA_PERSISTENCE=true \
-    --env AZURE_COSMOS_EMULATOR_PARTITION_COUNT=3 \
     --detach \
+    --env AZURE_COSMOS_EMULATOR_ENABLE_DATA_PERSISTENCE=true \
     --restart=always \
-    -v cosmosdbdata:/tmp/cosmos/appdata \
     mcr.microsoft.com/cosmosdb/linux/azure-cosmos-emulator:latest
